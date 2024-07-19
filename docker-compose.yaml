@@ -1,0 +1,12 @@
+version: '3'
+
+services:  # Cambiado 'service' a 'services'
+  db:
+    image: mongo:5
+    restart: always
+    ports:
+      - "27017:27017"  # Asegúrate de usar comillas para los puertos
+    environment:
+      MONGODB_DATABASE: nest-pokemon
+    volumes:
+      - ./mongo:/data/db
